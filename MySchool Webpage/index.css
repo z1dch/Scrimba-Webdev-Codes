@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container1, .container3 {
+    text-align: center;
+    width: 100%;
+    height: 100vh; 
+}
+
+.container1 {background-color: lightblue;}
+.container2 {background-color: lightgreen;}
+.container3 {background-color: lightyellow;}
+
+
+.container1-bg {
+    position: absolute; 
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('Images/pupImage.png'); 
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+    transform: scale(1.1); 
+    z-index: 1; 
+}
+
+.container1-content {
+    position: relative; 
+    z-index: 2; 
+    padding: 20px;
+    color: white;
+}
+
+/* The Section Wrapper */
+.container2 {
+    background-color: lightgreen;
+    width: 100%;
+    min-height: 100vh; /* Changed to min-height so content fits if screen is small */
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container2 h1 {
+    margin-bottom: 30px;
+    font-family: sans-serif;
+}
+
+/* THE GRID CONTAINER (3 Columns, 2 Rows) */
+.mission-grid {
+    display: grid;
+    /* This creates 3 equal-width columns */
+    grid-template-columns: repeat(3, 1fr); 
+    /* This creates 2 rows (can grow based on content automatically) */
+    grid-template-rows: auto auto; 
+    
+    gap: 30px;            /* Adds breathing room between grid boxes */
+    width: 100%;
+    max-width: 1200px;    /* Keeps the grid looking clean on wide desktop screens */
+}
+
+/* THE FLEXBOX ITEM (Inside the grid) */
+.per-content-format {
+    display: flex;        /* Puts image and text wrapper side-by-side */
+    flex-direction: row;  /* Forces horizontal row orientation */
+    align-items: center;  /* Centers image vertically with the text block next to it */
+    text-align: left;     /* FIXED: Overrides any center-alignment parent traits */
+    
+    background-color: rgba(255, 255, 255, 0.4); /* Optional: slight background to see the boxes */
+    padding: 15px;
+    border-radius: 8px;
+    gap: 15px;            /* Gap between the image and the text */
+}
+
+/* Keeps text components from squishing or bleeding */
+.per-content-format div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.per-content-format h2 {
+    font-size: 1.2rem;
+    font-family: sans-serif;
+}
+
+.per-content-format p {
+    font-size: 0.95rem;
+    font-family: sans-serif;
+    color: #111;
+}
